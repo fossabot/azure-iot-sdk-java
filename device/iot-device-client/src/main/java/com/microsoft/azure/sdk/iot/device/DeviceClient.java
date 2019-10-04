@@ -10,6 +10,7 @@ import com.microsoft.azure.sdk.iot.device.transport.amqps.IoTHubConnectionType;
 import com.microsoft.azure.sdk.iot.provisioning.security.SecurityProvider;
 import lombok.extern.slf4j.Slf4j;
 
+import javax.net.ssl.SSLContext;
 import java.io.Closeable;
 import java.io.IOError;
 import java.io.IOException;
@@ -212,6 +213,20 @@ public final class DeviceClient extends InternalClient implements Closeable
 
         // Codes_SRS_DEVICECLIENT_12_013: [The constructor shall set the connection type to SINGLE_CLIENT.]
         // Codes_SRS_DEVICECLIENT_12_014: [The constructor shall set the transportClient to null.]
+        commonConstructorSetup();
+    }
+
+    /**
+     * Creates a device client that uses x509 authentication that is controlled by the provided sslContext
+     * @param connString the connection string for the x509 device to connect as (format: "HostName=...;DeviceId=...;x509=true")
+     * @param protocol the protocol to use when communicating with IotHub
+     * @param sslContext the ssl context that will be used during x509 authentication
+     * @throws URISyntaxException if the hostname in the connection string is not a valid URI
+     */
+    public DeviceClient(String connString, IotHubClientProtocol protocol, SSLContext sslContext) throws URISyntaxException
+    {
+        super(new IotHubConnectionString(connString), protocol, sslContext, SEND_PERIOD_MILLIS, getReceivePeriod(protocol));
+        commonConstructorVerifications();
         commonConstructorSetup();
     }
 

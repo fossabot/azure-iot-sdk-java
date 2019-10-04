@@ -40,6 +40,16 @@ public class IotHubX509SoftwareAuthenticationProvider extends IotHubAuthenticati
         this.sslContextNeedsUpdate = false;
     }
 
+    public IotHubX509SoftwareAuthenticationProvider(String hostname, String gatewayHostname, String deviceId, String moduleId, SSLContext sslContext) throws IllegalArgumentException
+    {
+        super(hostname, gatewayHostname, deviceId, moduleId);
+
+        //Codes_SRS_IOTHUBX509AUTHENTICATION_34_002: [This constructor will create and save an IotHubX509 object using the provided public key certificate and private key.]
+        this.iotHubX509 = null;
+        this.sslContextNeedsUpdate = false;
+        this.iotHubSSLContext = new IotHubSSLContext(sslContext);
+    }
+
     /**
      * Getter for IotHubSSLContext
      * @throws IOException if an error occurs when generating the SSLContext
