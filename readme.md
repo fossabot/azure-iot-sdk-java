@@ -5,7 +5,8 @@ Due to security considerations, build logs are not publicly available.
 
 | Service Environment      | Status |
 | ---                      | ---    |
-| WestUS                   | [![Build Status](https://azure-iot-sdks.visualstudio.com/azure-iot-sdks/_apis/build/status/java/pull_request_validation/Java%20Prod?branchName=master)](https://azure-iot-sdks.visualstudio.com/azure-iot-sdks/_build/latest?definitionId=252&branchName=master)|
+| WestUS                   | [![Build Status](https://azure-iot-sdks.visualstudio.com/azure-iot-sdks/_apis/build/status/java/pull_request_validation/Java%20Prod?branchName=master)](https://azure-iot-sdks.visualstudio.com/azure-iot-sdks/_build/latest?definitionId=252&branchName=master)[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvernazza%2Fazure-iot-sdk-java.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvernazza%2Fazure-iot-sdk-java?ref=badge_shield)
+|
 | Canary                   | [![Build Status](https://azure-iot-sdks.visualstudio.com/azure-iot-sdks/_apis/build/status/java/pull_request_validation/Java%20Canary?branchName=master)](https://azure-iot-sdks.visualstudio.com/azure-iot-sdks/_build/latest?definitionId=245&branchName=master)|
 
 This repository contains the following:
@@ -196,3 +197,7 @@ Microsoft collects performance and usage information which may be used to provid
 [java-api-reference-device-dps]: https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.provisioning.device
 [java-api-reference-service-dps]: https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.provisioning.service
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvernazza%2Fazure-iot-sdk-java.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvernazza%2Fazure-iot-sdk-java?ref=badge_large)
